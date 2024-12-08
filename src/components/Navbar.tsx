@@ -1,60 +1,46 @@
-"use client"
-
+import React from "react";
 import Link from "next/link";
-import { useState } from "react";
-import { MdOutlineShoppingCart } from "react-icons/md";
-import { CiSearch } from "react-icons/ci";
-import { IoHeartOutline } from "react-icons/io5";
-import { RiContactsLine } from "react-icons/ri";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
-
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+import { HiOutlineUser } from "react-icons/hi";
+import { FiSearch } from "react-icons/fi";
+import { FaRegHeart } from "react-icons/fa";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+const Header = () => {
   return (
-    <div className="w-full bg-red-300 flex flex-col md:flex-row items-center justify-between text-black px-4 md:px-8 lg:px-12 h-16 md:h-auto relative">
-      {/* Mobile Menu Icon */}
-      <div className="flex w-full md:hidden justify-between items-center">
-        <Link href="/" className="text-lg font-bold">
-          Brand
-        </Link>
-        <button
-          className="text-3xl"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+    <div className="w-[1536px] h-[100px] pl-80 bg-[#FBEBB5] text-[#FAFAFA] flex mt-2px">
+      <div className="w-[430px] h-[150px] text-[#000000] pt-[38px] pl-[160px] space-x-6">
+        <Link
+          href="/"
+          className="w-[48px] h-[24px] font-poppins font-medium text-base text-2xl]"
         >
-          {isMenuOpen ? <HiX /> : <HiMenuAlt3 />}
-        </button>
+          Home
+        </Link>
+        <Link
+          href="/Shop"
+          className="w-[48px] h-[24px] font-poppins font-medium text-base"
+        >
+          Shop
+        </Link>
+        <Link
+          href="/About"
+          className="w-[48px] h-[24px] font-poppins font-medium text-base"
+        >
+          About
+        </Link>
+        <Link
+          href="/Contact"
+          className="w-[48px] h-[24px] font-poppins font-medium text-base"
+        >
+          Contact
+        </Link>
       </div>
-
-      {/* Navigation Links */}
-      <div
-        className={`absolute md:static top-16 left-0 w-full bg-red-300 md:flex md:items-center md:justify-between transition-all duration-300 ${
-          isMenuOpen ? "block" : "hidden"
-        }`}
-      >
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 px-4 py-4 md:py-0">
-          <Link className="hover:text-gray-600" href="/">
-            Home
-          </Link>
-          <Link className="hover:text-gray-600" href="/Shop">
-            Shop
-          </Link>
-          <Link className="hover:text-gray-600" href="/About">
-            About
-          </Link>
-          <Link className="hover:text-gray-600" href="/Contact">
-            Contact
-          </Link>
-        </div>
-      </div>
-
-      {/* Icons Section */}
-      <div className="hidden md:flex items-center gap-6 text-black space-x-5 mr-4">
-        <CiSearch className="text-2xl text-black/70 cursor-pointer hover:text-gray-600" />
-        <IoHeartOutline className="text-2xl text-black/70 cursor-pointer hover:text-gray-600" />
-        <MdOutlineShoppingCart className="text-2xl text-black/70 cursor-pointer hover:text-gray-600" />
-        <RiContactsLine className="text-2xl text-black/70 cursor-pointer hover:text-gray-600" />
+      <div className="flex text-[#000000] w-[235px] h-[28px] space-x-12 pt-9 ml-80">
+      <HiOutlineUser className="w-[28px] h-[28px]" />
+      <FiSearch className="w-[28px] h-[28px]"/>
+      <FaRegHeart className=" w-[28px] h-[28px]"/>
+      <AiOutlineShoppingCart className="w-[28px] h-[28px]"/>
       </div>
     </div>
   );
-}
+};
+
+export default Header;

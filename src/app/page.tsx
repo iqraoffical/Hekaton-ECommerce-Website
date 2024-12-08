@@ -1,22 +1,25 @@
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
+
 import Products from "@/components/Products";
 import Chair from "@/components/Chair";
 import Square from "@/components/Square";
 
-
+import Shoppingproduct from "@/components/Shoppingproduct";
+import Blogs from "@/components/Blogs";
 
 export default function Homepage () {
   return (
     <main>
-<Navbar/>
+
 <Hero/>
-{/* <Chair/> */}
+<Shoppingproduct/>
 <Products/>
 <Square/>
+<Chair/>
+<Blogs/>
 
-      <Footer/>
+     
     </main>
   );
 }
