@@ -34,10 +34,10 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex text-[#000000] w-[235px] h-[28px] space-x-12 pt-9 ml-80">
-      <HiOutlineUser className="w-[28px] h-[28px]" />
-      <FiSearch className="w-[28px] h-[28px]"/>
-      <FaRegHeart className=" w-[28px] h-[28px]"/>
-      <AiOutlineShoppingCart className="w-[28px] h-[28px]"/>
+        <HiOutlineUser className="w-[28px] h-[28px]" />
+        <FiSearch className="w-[28px] h-[28px]" />
+        <FaRegHeart className=" w-[28px] h-[28px]" />
+        <AiOutlineShoppingCart className="w-[28px] h-[28px]" />
       </div>
     </div>
   );

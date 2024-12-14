@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
-import Freedeliver from "@/components/Freedeliver"
+import Freedeliver from "@/components/Freedeliver";
 
 const Shop = () => {
   const [itemsPerPage, setItemsPerPage] = useState(16);
@@ -10,13 +11,123 @@ const Shop = () => {
 
   const categories = ["All", "Furniture", "Electronics", "Clothing", "Books"];
 
-  // Example product data with different images, names, and prices
-  const products = Array.from({ length: itemsPerPage }).map((_, index) => ({
-    id: index + 1,
-    name: `Product ${index + 1}`,
-    price: (index + 1) * 1000,
-    image: `/images/product-${(index % 5) + 1}.jpg`, // Different images (product-1.jpg, product-2.jpg, etc.)
-  }));
+  // Example product data with dynamic image paths
+  const products = [
+    {
+      id: 1,
+      name: "Trenton modular sofa_3",
+      price: "25,000.00",
+      image: "/images/Asgaard sofa.png",
+      link: "/Asgaard/page.tsx",
+    },
+    {
+      id: 2,
+      name: "Granite dining table with dining chair",
+      price: "25,000.00",
+      image: "/images/one.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 3,
+      name: "Outdoor bar table and stool",
+      price: "25,000.00",
+      image: "/images/two.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 4,
+      name: "Plain console with teak mirror",
+      price: "25,000.00",
+      image: "/images/three.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 5,
+      name: "Trenton modular sofa_3",
+      price: "25,000.00",
+      image: "/images/Asgaard sofa.png",
+      link: "/Asgaard/page.tsx",
+    },
+    {
+      id: 6,
+      name: "Granite dining table with dining chair",
+      price: "25,000.00",
+      image: "/images/one.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 7,
+      name: "Outdoor bar table and stool",
+      price: "25,000.00",
+      image: "/images/two.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 8,
+      name: "Plain console with teak mirror",
+      price: "25,000.00",
+      image: "/images/three.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 9,
+      name: "Trenton modular sofa_3",
+      price: "25,000.00",
+      image: "/images/Asgaard sofa.png",
+      link: "/Asgaard/page.tsx",
+    },
+    {
+      id: 10,
+      name: "Granite dining table with dining chair",
+      price: "25,000.00",
+      image: "/images/one.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 11,
+      name: "Outdoor bar table and stool",
+      price: "25,000.00",
+      image: "/images/two.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 12,
+      name: "Plain console with teak mirror",
+      price: "25,000.00",
+      image: "/images/three.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 13,
+      name: "Trenton modular sofa_3",
+      price: "25,000.00",
+      image: "/images/Asgaard sofa.png",
+      link: "/Asgaard/page.tsx",
+    },
+    {
+      id: 14,
+      name: "Granite dining table with dining chair",
+      price: "25,000.00",
+      image: "/images/one.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 15,
+      name: "Outdoor bar table and stool",
+      price: "25,000.00",
+      image: "/images/two.png",
+      link: "/images/Asgaard ",
+    },
+    {
+      id: 16,
+      name: "Plain console with teak mirror",
+      price: "25,000.00",
+      image: "/images/three.png",
+      link: "/images/Asgaard ",
+    },
+
+
+  ];
 
   return (
     <div className="p-4 md:p-8">
@@ -50,7 +161,7 @@ const Shop = () => {
 
         {/* Showing Results */}
         <p className="text-gray-600 text-sm w-full sm:w-auto">
-          Showing 1–{itemsPerPage} of 32 results
+          Showing 1–{itemsPerPage} of {products.length} results
         </p>
 
         {/* Items per Page */}
@@ -93,9 +204,11 @@ const Shop = () => {
             {/* Product Image */}
             <div className="w-full h-40 relative rounded overflow-hidden mb-4">
               <Image
-                src={"/images/one.png"} // Dynamic image path
+                src={product.image} 
                 alt={product.name}
-                layout="fill"
+                width={400}
+                height={400}
+                layout="responsive"
                 objectFit="cover"
                 className="rounded"
               />
@@ -103,16 +216,34 @@ const Shop = () => {
 
             {/* Product Details */}
             <h3 className="text-lg font-medium">{product.name}</h3>
-            <p className="text-sm text-gray-600">Rs. {product.price}</p>
+            <p className="text-sm text-black">Rs. {product.price}</p>
+
+            <div className="mt-4 text-center">
+              <Link href={`/Asgaard ${product.id}`}></Link>
+
+              <Link
+                href="/Asgaard"
+                className="text-sm text-black hover:underline"
+              >
+                View Details
+              </Link>
+
+           
+            </div>
           </div>
         ))}
-
-
-
       </div>
-      <Freedeliver/>
+      <div className="mt-8 text-center">
+            <div className="inline-flex items-center space-x-2">
+              <button className="px-4 py-2 #FBEBB5 text-black rounded-md">1</button>
+              <button className ="px-4 py-2 #FBEBB text-black rounded-md">2</button>
+              <button className="px-4 py-2 #FBEBB5 text-black rounded-md">3</button>
+              <button className="px-4 py-2 #FBEBB5 text-black rounded-md">Next</button>
+            </div>
+          </div>
+
+      <Freedeliver />
     </div>
-  
   );
 };
 

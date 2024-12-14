@@ -1,49 +1,47 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const Square = () => {
   return (
-    <div className="relative w-full bg-[#FAF4F4] h-[672px]">
-      <div className="relative w-full bg-white h-[672px]">
-        {/* First Block */}
-        <div
-          className="absolute w-[605px] h-[562px] left-[100px] top-[1047px]"
-        >
+    <section className="relative flex flex-col md:flex-row bg-[#FAF4F4] h-auto md:h-[672px] w-full justify-center md:justify-between items-center px-6 md:px-[100px] py-6">
+      {/* Left Image and Content */}
+      <div className="flex flex-col items-center md:items-start text-center md:text-left mb-6 md:mb-0">
+        <div className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[605px] md:h-[562px]">
           <Image
             src="/images/square side table.png"
-            width={200}
-            height={200}
-            alt="Rocket single seater, a modern and elegant furniture piece"
-            className="w-full max-w-xs sm:max-w-md md:max-w-lg object-contain"
+            width={605}
+            height={562}
+            alt="Square side table, a modern and elegant furniture piece"
+            className="object-contain w-full h-full"
           />
         </div>
-        <p className="absolute left-[205px] top-[1430px] text-2xl md:text-4xl font-medium text-black">
+        <p className="mt-4 text-xl sm:text-2xl md:text-4xl font-medium text-black">
           Side Table
         </p>
-        <button className="absolute left-[206px] top-[1507px] px-4 py-2 text-sm md:text-lg font-medium text-black border border-black rounded hover:bg-gray-100">
-          View More
-        </button>
-
-        {/* Second Block */}
-        <div
-          className="absolute w-[605px] h-[562px] left-[100px] top-[1200px]"
-        >
-          <Image
-            src="/images/square side table.png"
-            width={200}
-            height={200}
-            alt="Rocket single seater, a modern and elegant furniture piece"
-            className="w-full max-w-xs sm:max-w-md md:max-w-lg object-contain"
-          />
-        </div>
-        <p className="absolute left-[205px] top-[1730px] text-2xl md:text-4xl font-medium text-black">
-          Side Table
-        </p>
-        <button className="absolute left-[206px] top-[1807px] px-4 py-2 text-sm md:text-lg font-medium text-black border border-black rounded hover:bg-gray-100">
+        <button className="mt-2 px-4 py-2 text-sm sm:text-base md:text-lg font-medium text-black border border-black rounded hover:bg-gray-100">
           View More
         </button>
       </div>
-    </div>
+
+      {/* Right Image and Content */}
+      <div className="flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[605px] md:h-[562px]">
+          <Image
+            src="/images/Mask group (9).png"
+            width={605}
+            height={562}
+            alt="Another stylish furniture piece"
+            className="object-contain w-full h-full"
+          />
+        </div>
+        <p className="mt-4 text-xl sm:text-2xl md:text-4xl font-medium text-black">
+          Mask Group
+        </p>
+        <button className="mt-2 px-4 py-2 text-sm sm:text-base md:text-lg font-medium text-black border border-black rounded hover:bg-gray-100">
+          View More
+        </button>
+      </div>
+    </section>
   );
 };
 
